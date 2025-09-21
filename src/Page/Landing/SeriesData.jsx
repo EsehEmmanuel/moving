@@ -2,14 +2,18 @@ import React from "react";
 import { seriesData } from "../../Components/CardObj";
 import styled from "styled-components";
 
-const SeriesData = () => {
+const SeriesData = ({ onSelect }) => {
   return (
     <Holder>
       <div className="wrapper">
         <h3>Series Data</h3>
         <section>
           {seriesData.map((items, index) => (
-            <div className="hold_wrap" key={index}>
+            <div
+              className="hold_wrap"
+              key={index.id}
+              onClick={() => onSelect(items)}
+            >
               <img src={items.image} />
               <p>{items.title}</p>
             </div>

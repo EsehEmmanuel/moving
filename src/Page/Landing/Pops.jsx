@@ -1,15 +1,19 @@
 import React from "react";
-import { Popular } from "../../Components/CardObj";
+import { popular } from "../../Components/CardObj";
 import styled from "styled-components";
 
-const Pops = () => {
+const Pops = ({ onSelect }) => {
   return (
     <Holder>
       <div className="wrapper">
         <h3>Popular</h3>
         <section>
-          {Popular.map((items, index) => (
-            <div className="hold_wrap" key={index}>
+          {popular.map((items, index) => (
+            <div
+              className="hold_wrap"
+              key={index.id}
+              onClick={() => onSelect(items)}
+            >
               <img src={items.image} />
               <p>{items.title}</p>
             </div>

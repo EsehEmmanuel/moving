@@ -2,14 +2,18 @@ import React from "react";
 import { movieData } from "./../../Components/CardObj";
 import styled from "styled-components";
 
-const MovieData = () => {
+const MovieData = ({ onSelect }) => {
   return (
     <Holder>
       <div className="wrapper">
         <h3>Movie Data</h3>
         <section>
           {movieData.map((items, index) => (
-            <div className="hold_wrap" key={index}>
+            <div
+              className="hold_wrap"
+              key={index.id}
+              onClick={() => onSelect(items)}
+            >
               <img src={items.image} />
               <p>{items.title}</p>
             </div>

@@ -2,14 +2,18 @@ import React from "react";
 import { TopTrend } from "./../../Components/CardObj";
 import styled from "styled-components";
 
-const TopTrending = () => {
+const TopTrending = ({ onSelect }) => {
   return (
     <Holder>
       <div className="wrapper">
         <h3>Top Trending</h3>
         <section>
           {TopTrend.map((items, index) => (
-            <div className="hold_wrap" key={index}>
+            <div
+              className="hold_wrap"
+              key={index.id}
+              onClick={() => onSelect(items)}
+            >
               <img src={items.image} />
               <p>{items.title}</p>
             </div>

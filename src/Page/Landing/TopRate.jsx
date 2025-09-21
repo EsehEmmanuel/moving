@@ -2,14 +2,18 @@ import React from "react";
 import { TopRating } from "../../Components/CardObj";
 import styled from "styled-components";
 
-const TopRate = () => {
+const TopRate = ({ onSelect }) => {
   return (
     <Holder>
       <div className="wrapper">
         <h3>Top Rating</h3>
         <section>
           {TopRating.map((items, index) => (
-            <div className="hold_wrap" key={index}>
+            <div
+              className="hold_wrap"
+              key={index.id}
+              onClick={() => onSelect(items)}
+            >
               <img src={items.image} />
               <p>{items.title}</p>
             </div>

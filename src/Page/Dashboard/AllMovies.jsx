@@ -6,54 +6,64 @@ import TopTwo from "./../Landing/TopRate";
 import Popular from "./../Landing/Pops";
 import Movie from "./../Landing/MovieData";
 import Series from "./../Landing/SeriesData";
+import { useNavigate } from "react-router-dom";
 
-const AllMovies = () => (
-  <Wrapper>
-    <Carousel autoplay className="carousel">
-      <div>
-        <img
-          src="https://image.tmdb.org/t/p/w300//yvirUYrva23IudARHn3mMGVxWqM.jpg"
-          alt="1"
-        />
-      </div>
-      <div>
-        <img
-          src="https://image.tmdb.org/t/p/original//8Mckh3qJRTzXTQNZtpb133RHmO4.jpg"
-          alt="2"
-        />
-      </div>
-      <div>
-        <img
-          src="https://image.tmdb.org/t/p/w300//yvirUYrva23IudARHn3mMGVxWqM.jpg"
-          alt="3"
-        />
-      </div>
-      <div>
-        <img
-          src="https://image.tmdb.org/t/p/original//jrhXbIOFingzdLjkccjg9vZnqIp.jpg"
-          alt="4"
-        />
-      </div>
-      <div>
-        <img
-          src="https://image.tmdb.org/t/p/original//qJ2tW6WMUDux911r6m7haRef0WH.jpg"
-          alt="5"
-        />
-      </div>
-      <div>
-        <img
-          src="https://image.tmdb.org/t/p/w300//jMpBQr2aNOFAI6wsC47zsOG6qOh.jpg"
-          alt="6"
-        />
-      </div>
-    </Carousel>
-    <Top />
-    <TopTwo />
-    <Popular />
-    <Movie />
-    <Series />
-  </Wrapper>
-);
+const AllMovies = () => {
+  const navigate = useNavigate();
+
+  const handleSelect = (movie) => {
+    navigate(`/E-Moive/movie/${movie.id}`);
+  };
+
+  return (
+    <Wrapper>
+      <Carousel autoplay className="carousel">
+        <div>
+          <img
+            src="https://image.tmdb.org/t/p/w300//yvirUYrva23IudARHn3mMGVxWqM.jpg"
+            alt="1"
+          />
+        </div>
+        <div>
+          <img
+            src="https://image.tmdb.org/t/p/original//8Mckh3qJRTzXTQNZtpb133RHmO4.jpg"
+            alt="2"
+          />
+        </div>
+        <div>
+          <img
+            src="https://image.tmdb.org/t/p/w300//yvirUYrva23IudARHn3mMGVxWqM.jpg"
+            alt="3"
+          />
+        </div>
+        <div>
+          <img
+            src="https://image.tmdb.org/t/p/original//jrhXbIOFingzdLjkccjg9vZnqIp.jpg"
+            alt="4"
+          />
+        </div>
+        <div>
+          <img
+            src="https://image.tmdb.org/t/p/original//qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+            alt="5"
+          />
+        </div>
+        <div>
+          <img
+            src="https://image.tmdb.org/t/p/w300//jMpBQr2aNOFAI6wsC47zsOG6qOh.jpg"
+            alt="6"
+          />
+        </div>
+      </Carousel>
+
+      <Top onSelect={handleSelect} />
+      <TopTwo onSelect={handleSelect} />
+      <Popular onSelect={handleSelect} />
+      <Movie onSelect={handleSelect} />
+      <Series onSelect={handleSelect} />
+    </Wrapper>
+  );
+};
 
 export default AllMovies;
 
@@ -61,7 +71,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: max-content;
   overflow: hidden;
-  /* background: black; */
 
   .carousel {
     width: 100%;

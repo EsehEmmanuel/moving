@@ -8,6 +8,8 @@ import Movies from "./Page/Dashboard/Movies";
 import AllMovies from "./Page/Dashboard/AllMovies";
 import Profile from "./Page/Dashboard/Profile";
 import { HashRouter, Routes, Route } from "react-router-dom";
+import Data from "./Components/Data";
+import { All } from "./Components/All";
 
 const App = () => {
   return (
@@ -22,6 +24,7 @@ const App = () => {
           <Route path="" element={<AllMovies />} />
           <Route path="profile" element={<Profile />} />
           <Route path="movies" element={<Movies />} />
+          <Route path="movie/:id" element={<Data movies={All} />} />
         </Route>
       </Routes>
     </HashRouter>

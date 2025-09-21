@@ -8,22 +8,22 @@ const Landing = () => {
     <LandingStyle>
       <article className="landing_Wrapper">
         <header>
-          <h2>E-Movie</h2>
+          <h2>Bobus-Movie</h2>
           <button onClick={() => nav("/login")}>Sign in</button>
         </header>
 
         <section className="Hero">
           <article className="Hero_Wraper">
             <h2>
-              Unlimited <span>movies</span>, TV <br />
-              shows, and more
+              Get <span>movies</span>, TV <br />
+              at zero cost
             </h2>
             <span>Starts at ₦1,500. Cancel anytime.</span>
 
             <div className="membership">
               <p>
-                Ready to watch? Enter your email to create or restart your
-                membership.
+                Ready to watch? Signup here for free or Login with your accout
+                here.
               </p>
               <div className="membership_Input">
                 <input type="text" placeholder="Search" name="Search" />
@@ -40,7 +40,7 @@ const Landing = () => {
 export default Landing;
 
 const LandingStyle = styled.div`
-  width: 100%;
+  width: 98%;
   height: 100vh;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.531), #000), url(${BG});
   display: flex;
@@ -63,7 +63,7 @@ const LandingStyle = styled.div`
       justify-content: space-between;
 
       h2 {
-        color: orange;
+        color: tomato;
         font-size: 1.7rem;
       }
 
@@ -71,14 +71,14 @@ const LandingStyle = styled.div`
         width: 6rem;
         height: 2.5rem;
         color: white;
-        background-color: orange;
+        background-color: tomato;
         border-radius: 0.2rem;
         border: none;
         cursor: pointer;
         transition: all 350ms ease-in-out;
 
         &:hover {
-          background-color: darkred;
+          background-color: orange;
         }
       }
     }
@@ -104,7 +104,7 @@ const LandingStyle = styled.div`
           text-align: center;
 
           span {
-            color: orange;
+            color: tomato;
           }
         }
 
@@ -141,7 +141,7 @@ const LandingStyle = styled.div`
               width: 20%;
               height: 90%;
               color: white;
-              background-color: orange;
+              background-color: tomato;
               cursor: pointer;
               border: none;
               border-radius: 0.2rem;
@@ -150,7 +150,7 @@ const LandingStyle = styled.div`
               transition: all 350ms ease-in-out;
 
               &:hover {
-                background-color: darkred;
+                background-color: orange;
               }
             }
           }
